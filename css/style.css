@@ -7,6 +7,7 @@ body {
 }
 p {
     font-size: 1.25rem;
+    line-height: 1.5;
 }
 .intro p {
     max-width: 350px;
@@ -22,6 +23,7 @@ p {
 .summary {
     margin-left: calc(5vw + 165px);
     max-width: 662px;
+    margin-bottom: 3rem;
 }
 .summary p {
     color: #483333;
@@ -29,6 +31,41 @@ p {
 
 a {
     color: #AF1818;
+}
+
+.listing {
+    display: flex;
+    margin: 0 5vw 3rem;
+}
+.listing p {
+    font-size: 0.95rem;
+    margin-top: 0;
+}
+.listing h3 {
+    font-family: Helvetica, Arial, sans-serif;
+    margin-bottom: 10px;
+}
+.listing h2 {
+    font-family: Helvetica, Arial, sans-serif;
+    font-size: 1.25rem;
+    margin-right: 30px;
+    max-width: 134px;
+    margin-top: 0;
+}
+.listing ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: grid;
+    grid-template-columns: 25% 25% 25% 25%;
+    max-width: 890px;
+    width: 100%;
+}
+.listing li {
+    max-width: 220px;
+}
+.listing img {
+    width: 100%;
 }
 
 @media (max-width: 550px) {
