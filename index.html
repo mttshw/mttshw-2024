@@ -5,6 +5,8 @@
 	<link href="css/normalise.css" rel="stylesheet"/>
 	<link href="css/style.css" rel="stylesheet"/>
     <title>Matt Shaw - Designer & Developer</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
   </head>
 
   <body>
@@ -14,7 +16,7 @@
     </section>
     <section class="summary">
         <p>Based in Hampshire, UK. I have over 15 years experience in the industry, working with all sorts of clients - from small businesses to national newspapers.</p>
-        <p>If you'd like to know more about me, or enquire about working with me, <a href="#">send me a message</a>.</p>
+        <p>If you'd like to know more about me, or enquire about working with me, <a href="mailto:matt+website@mttshw.com">send me a message</a>.</p>
     </section>
     <section class="listing">
         <h2>Personal Projects</h2>
@@ -37,7 +39,7 @@
             <li>
                 <img src="img/esure.png" alt="esure logo">
                 <h3>Esure</h3>
-                <p>Worked on their self service web app.</p>
+                <p>Worked on their self service web app. Added payment integration, theming for separate brands, and policy adjustments at renewal.</p>
                 <p><span>React</span><span>Typescript</span><span>MobX</span><span>Material UI</span></p>
             </li>
             <li>
@@ -55,8 +57,8 @@
             <li>
                 <img src="img/authlogics.png" alt="Authlogics logo">
                 <h3>Authlogics</h3>
-                <p>Reskinned their customer facing portal.</p>
-                <p><span>Vue.js</span><span>CSS</span></p>
+                <p>Reskinned their customer facing portal. Built a wordpress portal for thier resellers.</p>
+                <p><span>Vue.js</span><span>CSS</span><span>Wordpress</span></p>
             </li>
             <li>
                 <img src="img/pl.png" alt="Premier League logo">
@@ -84,6 +86,24 @@
             </li>
         </ul>
     </section>
-    <!-- <script src="js/app.js" type="module"></script> -->
+    <div id="background">
+        <svg width="100%" height="100%" viewBox="0 0 1668 2388" xmlns="http://www.w3.org/2000/svg">
+            <g clip-path="url(#_clip1)">
+                <path d="M0.609,2386.9L213.212,1839.11L381.445,1934.7L669.485,1437.52L875.83,1579.85L1253.15,1010.52L1473.35,1164.9L1668.11,1.789L1668.11,2386.95L0.609,2386.9Z" style="fill:url(#_Linear2);"/>
+            </g>
+            <defs>
+                <linearGradient id="_Linear2" x1="0" y1="0" x2="1" y2="0" gradientUnits="userSpaceOnUse" gradientTransform="matrix(907.239,867.837,-867.837,907.239,767.013,1523.65)"><stop offset="0" style="stop-color:rgb(245,245,245);stop-opacity:1"/><stop offset="1" style="stop-color:rgb(170,170,170);stop-opacity:1"/></linearGradient>
+            </defs>
+        </svg>
+    </div>
   </body>
+  <script>
+    const svg = document.querySelector('svg');
+    const path = svg.querySelector('path');
+
+    path.d = `M0.609,2386.9L213.212,1839.11L381.445,1934.7L669.485,1437.52L875.83,1579.85L1253.15,1010.52L1473.35,1164.9L1668.11,1.789L1668.11,2386.95L0.609,2386.9Z`;
+
+  </script>
 </html>
+fix,   fix            peak            trough         peak           trough          peak            trough         fixed top corner                      
+M0.609,2386.9L213.212,1839.11L381.445,1934.7L669.485,1437.52L875.83,1579.85L1253.15,1010.52L1473.35,1164.9L1668.11,1.789L1668.11,2386.95L0.609,2386.9Z

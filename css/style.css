@@ -1,5 +1,8 @@
 body {
     font-family: Georgia, 'Times New Roman', Times, serif;
+    background: url(/img/bg.svg);
+    background-size: cover;
+    background-attachment: fixed;
 }
 .intro {
     display: flex;
@@ -49,8 +52,9 @@ a {
     font-family: Helvetica, Arial, sans-serif;
     font-size: 1.25rem;
     margin-right: 30px;
-    max-width: 134px;
+    min-width: 134px;
     margin-top: 0;
+    max-width: 134px;
 }
 .listing ul {
     margin: 0;
@@ -60,12 +64,34 @@ a {
     grid-template-columns: 25% 25% 25% 25%;
     max-width: 890px;
     width: 100%;
+    grid-gap: 1vw;
 }
 .listing li {
     max-width: 220px;
 }
 .listing img {
     width: 100%;
+}
+.listing span {
+    display: inline-block;
+    padding: 3px 5px;
+    border-radius: 5px;
+    background: #AF1818;
+    color: white;
+    font-size: 0.8rem;
+    margin: 0 2px 2px 0;
+}
+
+@media (max-width: 1023px) {
+    .listing ul {
+        grid-template-columns: 33% 33% 33%;
+    }
+}
+
+@media (max-width: 766px) {
+    .listing ul {
+        grid-template-columns: 50% 50%;
+    }
 }
 
 @media (max-width: 550px) {
@@ -79,5 +105,11 @@ a {
     .col1 img {
         max-width: 70px;
         margin-right: 5vw;
+    }
+    .listing {
+        flex-direction: column;
+    }
+    .listing h2 {    
+        max-width: 100%;
     }
 }
