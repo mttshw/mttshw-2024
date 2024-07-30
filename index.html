@@ -88,24 +88,24 @@
             </li>
         </ul>
     </section>
-    <!-- <div id="background">
-        <svg width="100%" height="100%" viewBox="0 0 1668 2388" xmlns="http://www.w3.org/2000/svg">
-            <g clip-path="url(#_clip1)">
-                <path d="M0.609,2386.9L213.212,1839.11L381.445,1934.7L669.485,1437.52L875.83,1579.85L1253.15,1010.52L1473.35,1164.9L1668.11,1.789L1668.11,2386.95L0.609,2386.9Z" style="fill:url(#_Linear2);"/>
-            </g>
-            <defs>
-                <linearGradient id="_Linear2" x1="0" y1="0" x2="1" y2="0" gradientUnits="userSpaceOnUse" gradientTransform="matrix(907.239,867.837,-867.837,907.239,767.013,1523.65)"><stop offset="0" style="stop-color:rgb(245,245,245);stop-opacity:1"/><stop offset="1" style="stop-color:rgb(170,170,170);stop-opacity:1"/></linearGradient>
-            </defs>
-        </svg>
-    </div> -->
+    <svg id="background" viewBox="0 0 1668 2388" preserveAspectRatio="none">
+        <g clip-path="url(#_clip1)">
+            <path d="M0.609,2386.9L213.212,1839.11L381.445,1934.7L669.485,1437.52L875.83,1579.85L1253.15,1010.52L1473.35,1164.9L1668.11,1.789L1668.11,2386.95L0.609,2386.9Z" style="fill:url(#_Linear2);"/>
+        </g>
+        <defs>
+            <linearGradient id="_Linear2" x1="0" y1="0" x2="1" y2="0" gradientUnits="userSpaceOnUse" gradientTransform="matrix(907.239,867.837,-867.837,907.239,767.013,1523.65)"><stop offset="0" style="stop-color:rgb(245,245,245);stop-opacity:1"/><stop offset="1" style="stop-color:rgb(170,170,170);stop-opacity:1"/></linearGradient>
+        </defs>
+    </svg>
   </body>
-  <!-- <script>
+  <script>
     const svg = document.querySelector('svg');
     const path = svg.querySelector('path');
-
-    path.d = `M0.609,2386.9L213.212,1839.11L381.445,1934.7L669.485,1437.52L875.83,1579.85L1253.15,1010.52L1473.35,1164.9L1668.11,1.789L1668.11,2386.95L0.609,2386.9Z`;
-
-  </script> -->
+    setInterval( () => {                                
+        path.setAttribute("d", `M0.609,2386.9L213.212,${randomY(1639, 2039)}.11L381.445,${randomY(1734, 2134)}.7L669.485,${randomY(1237, 1637)}.52L875.83,${randomY(1379, 1779)}.85L1253.15,${randomY(810, 1210)}.52L1473.35,${randomY(964, 1364)}.9L1668.11,1.789L1668.11,2386.95L0.609,2386.9Z`);
+        // console.log(path.d);
+    }, 2600);
+    const randomY = (min, max) => {
+        return Math.floor(Math.random() * (max - min + 1) + min);
+    }
+  </script>
 </html>
-<!-- fix,   fix            peak            trough         peak           trough          peak            trough         fixed top corner                      
-M0.609,2386.9L213.212,1839.11L381.445,1934.7L669.485,1437.52L875.83,1579.85L1253.15,1010.52L1473.35,1164.9L1668.11,1.789L1668.11,2386.95L0.609,2386.9Z -->

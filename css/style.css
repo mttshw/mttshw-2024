@@ -1,8 +1,13 @@
 body {
     font-family: Georgia, 'Times New Roman', Times, serif;
-    background: url(/img/bg.svg);
-    background-size: cover;
-    background-attachment: fixed;
+}
+#background {
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    right: 0;
+    z-index: -1;
 }
 .intro {
     display: flex;
@@ -80,6 +85,12 @@ a {
     color: white;
     font-size: 0.8rem;
     margin: 0 2px 2px 0;
+}
+
+svg path {
+    stroke: white;
+    stroke-width: 4;
+    transition: 2.5s;
 }
 
 @media (max-width: 1023px) {
