@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <link href="../css/normalise.css" rel="stylesheet"/>
+    <link href="../css/style.css" rel="stylesheet"/>
+    <title>Fetcher – API Testing Tool for Mac</title>
+    <meta name="description" content="Fetcher is a native macOS app for testing and exploring APIs. Send requests, inspect responses, and iterate faster — no account required." />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+      .fetcher-hero {
+        display: flex;
+        align-items: center;
+        padding: 6vh 5vw 2vh;
+        gap: 2rem;
+      }
+      .fetcher-icon {
+        width: 100px;
+        height: 100px;
+        border-radius: 22px;
+        background: #AF1818;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 0;
+      }
+      .fetcher-icon svg {
+        width: 56px;
+        height: 56px;
+        fill: none;
+        stroke: white;
+        stroke-width: 2.5;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+      }
+      .fetcher-hero-text h1 {
+        font-family: Helvetica, Arial, sans-serif;
+        font-size: 2.8rem;
+        margin: 0 0 0.25rem;
+        font-weight: 700;
+        letter-spacing: -0.02em;
+      }
+      .fetcher-hero-text p {
+        margin: 0;
+        font-size: 1.2rem;
+        color: #483333;
+        max-width: 520px;
+      }
+      .fetcher-cta {
+        padding: 0 5vw 4vh;
+      }
+      .app-store-badge {
+        display: inline-block;
+        margin-top: 1.5rem;
+      }
+      .app-store-badge img {
+        height: 50px;
+      }
+      .fetcher-features {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 2rem;
+        margin: 0 5vw 5vh;
+        max-width: 860px;
+      }
+      .feature {
+        background: rgba(255,255,255,0.6);
+        border-radius: 12px;
+        padding: 1.4rem 1.5rem;
+        backdrop-filter: blur(4px);
+      }
+      .feature h3 {
+        font-family: Helvetica, Arial, sans-serif;
+        font-size: 1rem;
+        margin: 0 0 0.5rem;
+        color: #AF1818;
+      }
+      .feature p {
+        font-size: 0.9rem;
+        color: #483333;
+        margin: 0;
+        line-height: 1.5;
+      }
+      .fetcher-back {
+        display: inline-block;
+        margin: 0 5vw 3vh;
+        font-size: 0.9rem;
+        color: #AF1818;
+        text-decoration: none;
+        font-family: Helvetica, Arial, sans-serif;
+      }
+      .fetcher-back:hover {
+        text-decoration: underline;
+      }
+      @media (max-width: 700px) {
+        .fetcher-features {
+          grid-template-columns: 1fr 1fr;
+        }
+        .fetcher-hero-text h1 {
+          font-size: 2rem;
+        }
+      }
+      @media (max-width: 480px) {
+        .fetcher-features {
+          grid-template-columns: 1fr;
+        }
+        .fetcher-hero {
+          flex-direction: column;
+          align-items: flex-start;
+        }
+      }
+    </style>
+  </head>
+  <body>
+
+    <div class="fetcher-hero">
+      <div class="fetcher-icon">
+        <svg viewBox="0 0 24 24">
+          <path d="M5 12h14M12 5l7 7-7 7"/>
+          <circle cx="5" cy="12" r="2"/>
+        </svg>
+      </div>
+      <div class="fetcher-hero-text">
+        <h1>Fetcher</h1>
+        <p>A native macOS app for testing and exploring APIs. Send requests, inspect responses, and iterate without the bloat.</p>
+      </div>
+    </div>
+
+    <div class="fetcher-cta">
+      <a class="app-store-badge" href="https://apps.apple.com/gb/app/fetcher-api-testing-tool/id6779552904?mt=12" target="_blank">
+        <img src="https://developer.apple.com/assets/elements/badges/download-on-the-mac-app-store.svg" alt="Download on the Mac App Store" />
+      </a>
+    </div>
+
+    <div class="fetcher-features">
+      <div class="feature">
+        <h3>All the essentials</h3>
+        <p>GET, POST, PUT, DELETE, PATCH — set headers, body, and query params with a clean, distraction-free interface.</p>
+      </div>
+      <div class="feature">
+        <h3>No account required</h3>
+        <p>Download and go. No sign-up, no subscription, no cloud sync. Your requests stay on your machine.</p>
+      </div>
+      <div class="feature">
+        <h3>Native Mac app</h3>
+        <p>Built for macOS — fast to launch, feels right at home, and respects your system preferences.</p>
+      </div>
+      <div class="feature">
+        <h3>Response inspector</h3>
+        <p>View JSON, XML, and plain text responses with syntax highlighting and formatted output.</p>
+      </div>
+      <div class="feature">
+        <h3>Request history</h3>
+        <p>Every request is saved automatically so you can revisit and replay without having to start from scratch.</p>
+      </div>
+      <div class="feature">
+        <h3>Lightweight</h3>
+        <p>A small, focused tool that does one thing well — without the overhead of heavier alternatives.</p>
+      </div>
+    </div>
+
+    <a class="fetcher-back" href="/">← mttshw.com</a>
+
+    <svg id="background" viewBox="0 0 1668 2388" preserveAspectRatio="none">
+      <g clip-path="url(#_clip1)">
+        <path d="M0.609,2386.9L213.212,1839.11L381.445,1934.7L669.485,1437.52L875.83,1579.85L1253.15,1010.52L1473.35,1164.9L1668.11,1.789L1668.11,2386.95L0.609,2386.9Z" style="fill:url(#_Linear2);"/>
+      </g>
+      <defs>
+        <linearGradient id="_Linear2" x1="0" y1="0" x2="1" y2="0" gradientUnits="userSpaceOnUse" gradientTransform="matrix(907.239,867.837,-867.837,907.239,767.013,1523.65)"><stop offset="0" style="stop-color:rgb(245,245,245);stop-opacity:1"/><stop offset="1" style="stop-color:rgb(170,170,170);stop-opacity:1"/></linearGradient>
+      </defs>
+    </svg>
+
+  </body>
+  <script>
+    const svg = document.querySelector('svg');
+    const path = svg.querySelector('path');
+    setInterval(() => {
+      path.setAttribute("d", `M0.609,2386.9L213.212,${randomY(1639, 2039)}.11L381.445,${randomY(1734, 2134)}.7L669.485,${randomY(1237, 1637)}.52L875.83,${randomY(1379, 1779)}.85L1253.15,${randomY(810, 1210)}.52L1473.35,${randomY(964, 1364)}.9L1668.11,1.789L1668.11,2386.95L0.609,2386.9Z`);
+    }, 2600);
+    const randomY = (min, max) => Math.floor(Math.random() * (max - min + 1) + min);
+  </script>
+</html>
