@@ -1,173 +1,257 @@
 <!DOCTYPE html>
-<html>
+<html lang="en" data-color-scheme="auto">
   <head>
     <meta charset="UTF-8" />
-    <link href="../css/normalise.css" rel="stylesheet"/>
-    <link href="../css/style.css" rel="stylesheet"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Fetcher – API Testing Tool for Mac</title>
-    <meta name="description" content="Fetcher is a native macOS app for testing and exploring APIs. Send requests, inspect responses, and iterate faster — no account required." />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Fetcher is a free, lightweight HTTP client for testing APIs on your Mac. No account, no sync, no team plans." />
+    <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)" />
+    <meta name="theme-color" content="#121013" media="(prefers-color-scheme: dark)" />
+    <link rel="icon" href="../img/fetcher-icon.png" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400;1,8..60,600&display=swap" rel="stylesheet" />
+    <link href="../css/normalise.css" rel="stylesheet" />
+    <link href="../css/style.css" rel="stylesheet" />
     <style>
-      .fetcher-hero {
+      .site-nav {
+        padding-top: 2rem;
+        margin-bottom: 3rem;
+      }
+      .site-nav .logo {
+        grid-column: 1;
+      }
+      .site-nav .logo img {
+        width: 56px;
+      }
+
+      .hero {
+        align-items: start;
+        margin-bottom: 3rem;
+      }
+      .app-icon {
+        width: 96px;
+        height: auto;
+      }
+      .hero h1 {
+        margin: 0.2rem 0 0.75rem;
+        font-size: 2.6rem;
+        font-weight: 600;
+        line-height: 1.1;
+      }
+      .hero p {
+        max-width: 32em;
+        margin: 0 0 1rem;
+        font-size: 1.25rem;
+        line-height: 1.55;
+        color: var(--muted);
+      }
+      .download {
         display: flex;
+        flex-wrap: wrap;
         align-items: center;
-        padding: 6vh 5vw 2vh;
-        gap: 2rem;
+        gap: 0.75rem 1.25rem;
+        margin-top: 1.75rem;
       }
-      .fetcher-icon {
-        width: 100px;
-        height: 100px;
-        border-radius: 22px;
-        overflow: hidden;
-        flex-shrink: 0;
+      .download a {
+        line-height: 0;
       }
-      .fetcher-icon img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
+      .download img {
+        height: 44px;
+        width: auto;
+      }
+      .download span {
+        font-size: 0.95rem;
+        color: var(--muted);
+      }
+
+      .shot {
+        margin: 0;
+      }
+      .shot img {
         display: block;
+        width: 100%;
+        height: auto;
+        border-radius: 8px;
       }
-      .fetcher-hero-text h1 {
-        font-family: Helvetica, Arial, sans-serif;
-        font-size: 2.8rem;
-        margin: 0 0 0.25rem;
+      .shot figcaption {
+        margin-top: 0.75rem;
+        font-size: 0.9rem;
+        font-style: italic;
+        color: var(--muted);
+      }
+
+      .specs {
+        margin-top: 0;
+      }
+      .specs dt,
+      .specs dd {
+        margin: 0;
+        padding: 1.4rem 0;
+        border-top: 1px solid var(--rule);
+      }
+      .specs dt {
+        grid-column: 1;
+        padding-right: 1.5rem;
+        font-family: var(--sans);
         font-weight: 700;
-        letter-spacing: -0.02em;
       }
-      .fetcher-hero-text p {
-        margin: 0;
-        font-size: 1.2rem;
-        color: #483333;
+      .specs dd {
+        grid-column: 2;
+      }
+      .specs p {
+        max-width: 34em;
+        margin: 0 0 0.75rem;
+        font-size: 1.05rem;
+        line-height: 1.6;
+        color: var(--muted);
+      }
+      .specs p:last-child {
+        margin-bottom: 0;
+      }
+      .specs code {
+        font-family: ui-monospace, 'SF Mono', Menlo, Consolas, monospace;
+        font-size: 0.9em;
+        color: var(--text);
+      }
+      .specs .shot {
         max-width: 520px;
+        margin-top: 1.25rem;
       }
-      .fetcher-cta {
-        padding: 0 5vw 4vh;
-      }
-      .app-store-badge {
-        display: inline-block;
-        margin-top: 1.5rem;
-      }
-      .app-store-badge img {
-        height: 50px;
-      }
-      .fetcher-features {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        gap: 2rem;
-        margin: 0 5vw 5vh;
-        max-width: 860px;
-      }
-      .feature {
-        background: rgba(255,255,255,0.6);
-        border-radius: 12px;
-        padding: 1.4rem 1.5rem;
-        backdrop-filter: blur(4px);
-      }
-      .feature h3 {
-        font-family: Helvetica, Arial, sans-serif;
-        font-size: 1rem;
-        margin: 0 0 0.5rem;
-        color: #2E3DE0;
-      }
-      .feature p {
-        font-size: 0.9rem;
-        color: #483333;
+
+      .note p {
+        max-width: 34em;
         margin: 0;
-        line-height: 1.5;
+        font-size: 1.1rem;
+        line-height: 1.6;
       }
-      .fetcher-back {
-        display: inline-block;
-        margin: 0 5vw 3vh;
-        font-size: 0.9rem;
-        color: #AF1818;
-        text-decoration: none;
-        font-family: Helvetica, Arial, sans-serif;
-      }
-      .fetcher-back:hover {
-        text-decoration: underline;
-      }
-      @media (max-width: 700px) {
-        .fetcher-features {
-          grid-template-columns: 1fr 1fr;
+
+      @media (max-width: 600px) {
+        .site-nav {
+          padding-top: 1.5rem;
+          margin-bottom: 2rem;
         }
-        .fetcher-hero-text h1 {
-          font-size: 2rem;
+        .site-nav .logo img {
+          width: 48px;
         }
-      }
-      @media (max-width: 480px) {
-        .fetcher-features {
-          grid-template-columns: 1fr;
+        .app-icon {
+          width: 72px;
+          margin-bottom: 0.75rem;
         }
-        .fetcher-hero {
-          flex-direction: column;
-          align-items: flex-start;
+        .hero h1 {
+          font-size: 2.1rem;
+        }
+        .hero p {
+          font-size: 1.1rem;
+        }
+        .specs dt,
+        .specs dd {
+          grid-column: 1;
+        }
+        .specs dt {
+          padding-bottom: 0.4rem;
+        }
+        .specs dd {
+          padding-top: 0;
+          border-top: 0;
         }
       }
     </style>
   </head>
+
   <body>
-
-    <div class="fetcher-hero">
-      <div class="fetcher-icon">
-        <img src="../img/fe.jpg" alt="Fetcher app icon" />
-      </div>
-      <div class="fetcher-hero-text">
-        <h1>Fetcher</h1>
-        <p>A native macOS app for testing and exploring APIs. Send requests, inspect responses, and iterate without the bloat.</p>
-      </div>
-    </div>
-
-    <div class="fetcher-cta">
-      <a class="app-store-badge" href="https://apps.apple.com/gb/app/fetcher-api-testing-tool/id6779552904?mt=12" target="_blank">
-        <img src="https://developer.apple.com/assets/elements/badges/download-on-the-mac-app-store.svg" alt="Download on the Mac App Store" />
-      </a>
-    </div>
-
-    <div class="fetcher-features">
-      <div class="feature">
-        <h3>All the essentials</h3>
-        <p>GET, POST, PUT, DELETE, PATCH — set headers, body, and query params with a clean, distraction-free interface.</p>
-      </div>
-      <div class="feature">
-        <h3>No account required</h3>
-        <p>Download and go. No sign-up, no subscription, no cloud sync. Your requests stay on your machine.</p>
-      </div>
-      <div class="feature">
-        <h3>Native Mac app</h3>
-        <p>Built for macOS — fast to launch, feels right at home, and respects your system preferences.</p>
-      </div>
-      <div class="feature">
-        <h3>Response inspector</h3>
-        <p>View JSON, XML, and plain text responses with syntax highlighting and formatted output.</p>
-      </div>
-      <div class="feature">
-        <h3>Request history</h3>
-        <p>Every request is saved automatically so you can revisit and replay without having to start from scratch.</p>
-      </div>
-      <div class="feature">
-        <h3>Lightweight</h3>
-        <p>A small, focused tool that does one thing well — without the overhead of heavier alternatives.</p>
-      </div>
-    </div>
-
-    <a class="fetcher-back" href="/">← mttshw.com</a>
-
-    <svg id="background" viewBox="0 0 1668 2388" preserveAspectRatio="none">
-      <g clip-path="url(#_clip1)">
-        <path d="M0.609,2386.9L213.212,1839.11L381.445,1934.7L669.485,1437.52L875.83,1579.85L1253.15,1010.52L1473.35,1164.9L1668.11,1.789L1668.11,2386.95L0.609,2386.9Z" style="fill:url(#_Linear2);"/>
-      </g>
-      <defs>
-        <linearGradient id="_Linear2" x1="0" y1="0" x2="1" y2="0" gradientUnits="userSpaceOnUse" gradientTransform="matrix(907.239,867.837,-867.837,907.239,767.013,1523.65)"><stop offset="0" style="stop-color:rgb(245,245,245);stop-opacity:1"/><stop offset="1" style="stop-color:rgb(170,170,170);stop-opacity:1"/></linearGradient>
-      </defs>
+    <svg id="background" viewBox="0 0 1668 2388" preserveAspectRatio="none" aria-hidden="true">
+        <path d="M0.609,2386.9L213.212,1839.11L381.445,1934.7L669.485,1437.52L875.83,1579.85L1253.15,1010.52L1473.35,1164.9L1668.11,1.789L1668.11,2386.95L0.609,2386.9Z" fill="url(#mountain)"/>
+        <defs>
+            <linearGradient id="mountain" x1="0" y1="0" x2="1" y2="0" gradientUnits="userSpaceOnUse" gradientTransform="matrix(907.239,867.837,-867.837,907.239,767.013,1523.65)">
+                <stop offset="0" class="mountain-start"/>
+                <stop offset="1" class="mountain-end"/>
+            </linearGradient>
+        </defs>
     </svg>
 
+    <main class="page">
+        <nav class="row site-nav">
+            <a class="logo" href="/" aria-label="Matt Shaw — home"><img src="../img/logo.png" alt="" width="56" height="56" /></a>
+        </nav>
+
+        <header class="row hero">
+            <img class="app-icon" src="../img/fetcher-icon.png" alt="Fetcher app icon" width="96" height="96" />
+            <div class="content">
+                <h1>Fetcher</h1>
+                <p>A lightweight HTTP client for testing APIs on your Mac, without the bloat.</p>
+                <p>No account. No sync. No team plans. Just a clean, fast app that lives on your Mac.</p>
+                <div class="download">
+                    <a href="https://apps.apple.com/gb/app/fetcher-api-testing-tool/id6779552904?mt=12" target="_blank" rel="noopener">
+                        <img src="../img/mac-app-store-badge.svg" alt="Download on the Mac App Store" width="156" height="40" />
+                    </a>
+                    <span>Free. Needs macOS 14.5 or later.</span>
+                </div>
+            </div>
+        </header>
+
+        <section class="row">
+            <figure class="shot content">
+                <img src="../img/fetcher-screenshot-1.jpg" alt="Fetcher showing a GET request with query parameters on the left and a formatted JSON response on the right" width="1280" height="800" />
+                <figcaption>A GET request using collection variables, with the response on the right.</figcaption>
+            </figure>
+        </section>
+
+        <dl class="row specs">
+            <dt>Requests</dt>
+            <dd>
+                <p>GET, POST, PUT, PATCH, DELETE, HEAD and OPTIONS. Add query params, custom headers and a request body (JSON, plain text or form data), then see the response status, headers and body in a split view.</p>
+                <p>Every request is saved, so you can come back to it and send it again.</p>
+            </dd>
+
+            <dt>Collections</dt>
+            <dd>
+                <p>Organise requests into collections, one per project or API.</p>
+            </dd>
+
+            <dt>Variables</dt>
+            <dd>
+                <p>Define variables like <code>{{baseUrl}}</code> or <code>{{token}}</code> once, then use them in URLs, headers and request bodies. Each collection has its own, so switching between environments is as simple as editing a value.</p>
+                <figure class="shot">
+                    <img src="../img/fetcher-variables.jpg" alt="Fetcher's variables sheet for a collection, defining apiKey and baseUrl" width="624" height="390" loading="lazy" />
+                </figure>
+            </dd>
+
+            <dt>Export</dt>
+            <dd>
+                <p>Export any collection to a JSON file you can read, share or keep as a backup.</p>
+            </dd>
+
+            <dt>Privacy</dt>
+            <dd>
+                <p>Everything is stored locally in the app's data folder. Nothing leaves your Mac unless you export it.</p>
+            </dd>
+        </dl>
+
+        <section class="row note">
+            <div class="content">
+                <p>Fetcher is made by me, Matt Shaw. If you find a bug or there's something you'd like it to do, <a href="mailto:matt+website@mttshw.com?subject=Fetcher">send me a message</a>.</p>
+            </div>
+        </section>
+
+        <footer class="row footer">
+            <p class="content"><a href="/">← mttshw.com</a> · © <span id="year">2026</span> Matt Shaw</p>
+        </footer>
+    </main>
+
+    <script>
+        document.getElementById('year').textContent = new Date().getFullYear();
+
+        const randomY = (min, max) => {
+            return Math.floor(Math.random() * (max - min + 1) + min);
+        }
+        const path = document.querySelector('#background path');
+        const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+        setInterval( () => {
+            if (reduceMotion.matches || document.hidden) return;
+            path.setAttribute("d", `M0.609,2386.9L213.212,${randomY(1639, 2039)}.11L381.445,${randomY(1734, 2134)}.7L669.485,${randomY(1237, 1637)}.52L875.83,${randomY(1379, 1779)}.85L1253.15,${randomY(810, 1210)}.52L1473.35,${randomY(964, 1364)}.9L1668.11,1.789L1668.11,2386.95L0.609,2386.9Z`);
+        }, 2600);
+    </script>
   </body>
-  <script>
-    const svg = document.querySelector('svg');
-    const path = svg.querySelector('path');
-    setInterval(() => {
-      path.setAttribute("d", `M0.609,2386.9L213.212,${randomY(1639, 2039)}.11L381.445,${randomY(1734, 2134)}.7L669.485,${randomY(1237, 1637)}.52L875.83,${randomY(1379, 1779)}.85L1253.15,${randomY(810, 1210)}.52L1473.35,${randomY(964, 1364)}.9L1668.11,1.789L1668.11,2386.95L0.609,2386.9Z`);
-    }, 2600);
-    const randomY = (min, max) => Math.floor(Math.random() * (max - min + 1) + min);
-  </script>
 </html>
